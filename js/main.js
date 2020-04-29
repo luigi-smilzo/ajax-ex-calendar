@@ -17,24 +17,34 @@ $(document).ready(function () {
         var activeDate = moment( $('h1').attr('data-this-date'));
         var newActiveDate = activeDate.add(1, 'M');
         
-        //reset mesi
-        $('.month-list').html('');
-        
-        printMonth(template, newActiveDate);
+        if (newActiveDate.year() > 2018) {
+            alert('Anno non disponibile');
+        } else {
+            //reset mesi
+            $('.month-list').html('');
+            
+            printMonth(template, newActiveDate);
 
-        printHoliday(newActiveDate);
+            printHoliday(newActiveDate);
+        }
+        
     });
     
     prev.click(function() {
         var activeDate = moment( $('h1').attr('data-this-date'));
         var newActiveDate = activeDate.subtract(1, 'M');
         
-        //reset mesi
-        $('.month-list').html('');
-        
-        printMonth(template, newActiveDate);
+        if (newActiveDate.year() < 2018) {
+            alert('Anno non disponibile');
+        } else {
+            //reset mesi
+            $('.month-list').html('');
+            
+            printMonth(template, newActiveDate);
 
-        printHoliday(newActiveDate);
+            printHoliday(newActiveDate);
+        }
+        
     });
 
 }); // <-- End doc ready
