@@ -17,6 +17,9 @@ $(document).ready(function () {
         var activeDate = moment( $('h1').attr('data-this-date'));
         var newActiveDate = activeDate.add(1, 'M');
         
+        //reset mesi
+        $('.month-list').html('');
+        
         printMonth(template, newActiveDate);
     });
 
@@ -53,7 +56,7 @@ function printMonth(template, date) {
             day: thisDate.format('DD MMMM'),
             completeDate: thisDate.format('YYYY-MM-DD')
         };
-
+        
         //compilare e aggiungere template
         var html = template(context);
         $('.month-list').append(html);
