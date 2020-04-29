@@ -24,6 +24,18 @@ $(document).ready(function () {
 
         printHoliday(newActiveDate);
     });
+    
+    prev.click(function() {
+        var activeDate = moment( $('h1').attr('data-this-date'));
+        var newActiveDate = activeDate.subtract(1, 'M');
+        
+        //reset mesi
+        $('.month-list').html('');
+        
+        printMonth(template, newActiveDate);
+
+        printHoliday(newActiveDate);
+    });
 
 }); // <-- End doc ready
 
