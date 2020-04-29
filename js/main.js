@@ -21,6 +21,8 @@ $(document).ready(function () {
         $('.month-list').html('');
         
         printMonth(template, newActiveDate);
+
+        printHoliday(newActiveDate);
     });
 
 }); // <-- End doc ready
