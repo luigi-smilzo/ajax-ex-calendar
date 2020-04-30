@@ -6,7 +6,8 @@
   }
   
 body {
-    font-family: 'Poppins', sans-serif; 
+    font-family: 'Poppins', sans-serif;
+    margin-top: 30px;
 }
 
 /* UTILITIES */
@@ -19,8 +20,11 @@ body {
 /* LAYOUT */
 /* Header */
 .Header {
+    width: 350px;
+    height: 60px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .Header i {
@@ -52,7 +56,7 @@ li {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
+    width: calc( 100% / 7 );
     height: 50px;
     user-select: none;
 }
@@ -71,5 +75,11 @@ li.is-holiday::after {
     bottom: 5px;
     left: 50%;
     transform: translateX(-50%);
+}
+
+.Modal {
+    opacity: 0;
+    text-align: center;
+    color: red;
 }
 

@@ -6,6 +6,7 @@ $(document).ready(function () {
     var template = Handlebars.compile(source);
     var prev = $('.Header-leftArrow');
     var next = $('.Header-rightArrow');
+    var modal = $('.Modal');
     // print giorno
     printMonth(template, baseMonth);
 
@@ -18,7 +19,7 @@ $(document).ready(function () {
         var newActiveDate = activeDate.add(1, 'M');
         
         if (newActiveDate.year() > 2018) {
-            alert('Anno non disponibile');
+            modalFade(modal);
         } else {
             //reset mesi
             $('.month-list').html('');
@@ -35,7 +36,7 @@ $(document).ready(function () {
         var newActiveDate = activeDate.subtract(1, 'M');
         
         if (newActiveDate.year() < 2018) {
-            alert('Anno non disponibile');
+            modalFade(modal);
         } else {
             //reset mesi
             $('.month-list').html('');
@@ -115,4 +116,13 @@ function printHoliday(date) {
             console.log('Errore chiamata festività'); 
         }
     });
+}
+
+function modalFade(modal) {
+    modal.css('opacity', '1');
+    setTimeout(function(){
+        modal.animate({
+            opacity: 0
+        }, 1000);
+    }, 1500)
 }
