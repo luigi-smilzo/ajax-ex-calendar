@@ -1,27 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendar</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css'/>
     <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-    
-    <div class="container">
-        <h1 class="month"></h1>
-
-        <div class="Arrows">
-            <div class="Arrows-left">
-                <--- Prev
+    <div class="u-container">           
+  
+        <header class="Header">
+            <div class="Header-leftArrow">
+                <i class="fas fa-angle-left"></i>
             </div>
-            <div class="Arrows-right">
-                Next --->
+            <div class="Header-title">
+                <h2 class="month"></h2>  
             </div>
-        </div>        
-
-        <ul class="month-list"></ul>
+            <div class="Header-rightArrow">
+                <i class="fas fa-angle-right"></i>
+            </div>
+        </header>
+                      
+        <main>
+            <ul class="month-list"></ul>
+        </main>
+              
     </div>
 
 

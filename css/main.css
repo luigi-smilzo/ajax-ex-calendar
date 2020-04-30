@@ -1,28 +1,75 @@
+/* GENERAL STYLES */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
+  }
+  
 body {
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif; 
 }
 
-.container {
-    margin: 0 auto;
+/* UTILITIES */
+.u-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* LAYOUT */
+/* Header */
+.Header {
+    display: flex;
+    align-items: center;
+}
+
+.Header i {
+    vertical-align: middle;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.Header-title {
+    width: 215px;
     text-align: center;
 }
 
-li.holiday {
-    color: red;
+.Header-title h2 {
+    margin: 0 10px;
+    user-select: none;
+
 }
 
-.Arrows {
-    margin: 0 auto;
+/* Main */
+ul {
+    max-width: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
 }
 
-.Arrows-left,
-.Arrows-right {
-    display: inline-block;
-    cursor: pointer;
+li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    user-select: none;
 }
+
+li.is-holiday {
+    position: relative;
+}
+
+li.is-holiday::after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: red;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+

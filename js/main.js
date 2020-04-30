@@ -4,8 +4,8 @@ $(document).ready(function () {
     var baseMonth = moment('2018-01-01');
     var source = $('#day-template').html();
     var template = Handlebars.compile(source);
-    var prev = $('.Arrows-left');
-    var next = $('.Arrows-right');
+    var prev = $('.Header-leftArrow');
+    var next = $('.Header-rightArrow');
     // print giorno
     printMonth(template, baseMonth);
 
@@ -14,7 +14,7 @@ $(document).ready(function () {
 
     // EVENTS
     next.click(function() {
-        var activeDate = moment( $('h1').attr('data-this-date'));
+        var activeDate = moment( $('h2').attr('data-this-date'));
         var newActiveDate = activeDate.add(1, 'M');
         
         if (newActiveDate.year() > 2018) {
@@ -31,7 +31,7 @@ $(document).ready(function () {
     });
     
     prev.click(function() {
-        var activeDate = moment( $('h1').attr('data-this-date'));
+        var activeDate = moment( $('h2').attr('data-this-date'));
         var newActiveDate = activeDate.subtract(1, 'M');
         
         if (newActiveDate.year() < 2018) {
@@ -60,7 +60,7 @@ function printMonth(template, date) {
     var daysInMonth = date.daysInMonth();
 
     //  setta header
-    $('h1').html( date.format('MMMM YYYY') );
+    $('h2').html( date.format('MMMM YYYY') );
 
     // Imposta data attribute data visualizzata
     $('.month').attr('data-this-date',  date.format('YYYY-MM-DD'));
@@ -77,7 +77,7 @@ function printMonth(template, date) {
         // imposta dati template
         var context = {
             class: 'day',
-            day: thisDate.format('DD MMMM'),
+            day: thisDate.format('D'),
             completeDate: thisDate.format('YYYY-MM-DD')
         };
         
@@ -106,8 +106,8 @@ function printHoliday(date) {
                 var listItem = $('li[data-complete-date="' + thisHoliday.date + '"]');
 
                 if(listItem) {
-                    listItem.addClass('holiday');
-                    listItem.text( listItem.text() + ' - ' + thisHoliday.name );
+                    listItem.addClass('is-holiday');
+                    // listItem.text( listItem.text() + ' - ' + thisHoliday.name );
                 }
             }
         },
