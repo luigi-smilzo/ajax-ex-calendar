@@ -7,6 +7,7 @@ $(document).ready(function () {
     var prev = $('.Header-leftArrow');
     var next = $('.Header-rightArrow');
     var modal = $('.Modal');
+
     // print giorno
     printMonth(template, baseMonth);
 
@@ -109,6 +110,7 @@ function printHoliday(date) {
                 if(listItem) {
                     listItem.addClass('is-holiday');
                     // listItem.text( listItem.text() + ' - ' + thisHoliday.name );
+                    listItem.children('.HolidayName').text(thisHoliday.name);
                 }
             }
         },

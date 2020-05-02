@@ -84,3 +84,22 @@ li.is-holiday::after {
     color: red;
 }
 
+.HolidayName {
+    opacity: 0;
+    transition: opacity 200ms;
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: red;
+    background: #eee;
+    border-radius: 12px;
+    padding: 0 10px;
+    width: max-content;
+}
+
+li.is-holiday:hover .HolidayName {
+    opacity: 1;
+}
+
